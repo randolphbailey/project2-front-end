@@ -11,18 +11,20 @@ pipeline {
     npm_config_cache = 'npm-cache'
   }
   stages {
-    when { branch "master" }
     stage('Install Packages') {
+      when { branch "master" }
       steps {
         sh 'npm install'
       }
     }
     stage('Build') {
+      when { branch "master" }
       steps {
         sh 'npm run build'
         }
       }
     stage('Deployment') {
+       when { branch "master" }
         steps {
          withAWS(region:'us-east-1',credentials:'e1b45079-b2b7-4af7-b53c-65346b59e6ce') {
            s3Delete(bucket: 'jradrecipes.club', path:'**/*')
