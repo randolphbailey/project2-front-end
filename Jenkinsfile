@@ -37,9 +37,9 @@ pipeline {
             branch 'staging'
           }
           steps {
-            withAWS(region:'<your-bucket-region>',credentials:'AKIASXYWXTWIOZ6D2NER') {
-              s3Delete(bucket: '<bucket-name>', path:'**/*')
-              s3Upload(bucket: '<bucket-name>', workingDir:'build', includePathPattern:'**/*');
+            withAWS(region:'us-east-1',credentials:'AKIASXYWXTWIOZ6D2NER') {
+              s3Delete(bucket: 'jradrecipes.club', path:'**/*')
+              s3Upload(bucket: 'jradrecipes.club', workingDir:'build', includePathPattern:'**/*');
             }
           }
         }
@@ -48,9 +48,9 @@ pipeline {
             branch 'master'
           }
           steps {
-            withAWS(region:'<your-bucket-region>',credentials:'AKIASXYWXTWIOZ6D2NER') {
-              s3Delete(bucket: '<bucket-name>', path:'**/*')
-              s3Upload(bucket: '<bucket-name>', workingDir:'build', includePathPattern:'**/*');
+            withAWS(region:'us-east-1',credentials:'AKIASXYWXTWIOZ6D2NER') {
+              s3Delete(bucket: 'jradrecipes.club', path:'**/*')
+              s3Upload(bucket: 'jradrecipes.club', workingDir:'build', includePathPattern:'**/*');
             }
           }
         }
