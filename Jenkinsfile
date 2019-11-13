@@ -23,9 +23,9 @@ pipeline {
       }
     stage('Deployment') {
         steps {
-         withAWS(region:'<your-bucket-region>',credentials:'e1b45079-b2b7-4af7-b53c-65346b59e6ce') {
-           s3Delete(bucket: '<bucket-name>', path:'**/*')
-           s3Upload(bucket: '<bucket-name>', workingDir:'build', includePathPattern:'**/*');
+         withAWS(region:'us-east-1',credentials:'e1b45079-b2b7-4af7-b53c-65346b59e6ce') {
+           s3Delete(bucket: 'jradrecipes.club', path:'**/*')
+           s3Upload(bucket: 'jradrecipes.club', workingDir:'build', includePathPattern:'**/*');
             }
           }
        }
