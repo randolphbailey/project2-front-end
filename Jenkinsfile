@@ -24,7 +24,6 @@ pipeline {
       }
     }
     stage('Deployment') {
-      stage('Production') {
         steps {
          withAWS(region:'<your-bucket-region>',credentials:'AKIASXYWXTWIOZ6D2NER') {
            s3Delete(bucket: '<bucket-name>', path:'**/*')
@@ -33,5 +32,4 @@ pipeline {
           }
        }
     }
-}
 }
