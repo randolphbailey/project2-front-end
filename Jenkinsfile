@@ -17,12 +17,10 @@ pipeline {
       }
     }
     stage('Build') {
-      stage('Create Build Artifacts') {
-        steps {
-          sh 'npm run build'
+      steps {
+        sh 'npm run build'
         }
       }
-    }
     stage('Deployment') {
         steps {
          withAWS(region:'<your-bucket-region>',credentials:'AKIASXYWXTWIOZ6D2NER') {
