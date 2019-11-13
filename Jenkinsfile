@@ -1,7 +1,4 @@
 pipeline {
-  when {
-    branch: 'master'
-  }
   agent {
     docker {
       image 'node:13-alpine'
@@ -14,6 +11,9 @@ pipeline {
     npm_config_cache = 'npm-cache'
   }
   stages {
+    when {
+      branch: 'master'
+    }
     stage('Install Packages') {
       steps {
         sh 'npm install'
