@@ -1,4 +1,7 @@
 pipeline {
+  when {
+    branch: 'master'
+  }
   agent {
     docker {
       image 'node:13-alpine'
