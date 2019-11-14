@@ -4,8 +4,6 @@ import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-<<<<<<< Updated upstream
-
 import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
 //import { HomepageComponent } from './homepage/homepage.component';
@@ -22,13 +20,6 @@ import { PostComponent } from "./components/post/post.component";
     NewpostComponent,
     PostComponent
   ],
-=======
-import { NewpostComponent } from './newpost/newpost.component';
-import { PostComponent } from './post/post.component';
-
-@NgModule({
-  declarations: [AppComponent, NewpostComponent, PostComponent],
->>>>>>> Stashed changes
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent]
