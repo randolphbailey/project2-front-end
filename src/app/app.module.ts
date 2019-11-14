@@ -7,14 +7,19 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { ProfileComponent } from "./components/profile/profile.component";
 import { NewpostComponent } from "./components/newpost/newpost.component";
 import { PostComponent } from "./components/post/post.component";
+import { HomeComponent } from './components/home/home.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
     NewpostComponent,
-    PostComponent
+    PostComponent,
+    HomeComponent,
+
   ],
+  exports: [ProfileComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent]
