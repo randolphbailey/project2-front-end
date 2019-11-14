@@ -6,15 +6,21 @@
             <input type="text" class="form-control" name="title" id="" aria-describedby="title" #newTitle>
             <hr>
             <label for="post">Post:</label>
-            <input type="text" class="form-control" name="post" id="" aria-describedby="title" #newPost>
+            <textarea class="form-control" id="post" rows="3"></textarea>
             <hr>
             <label class="image-upload-container btn btn-bwm">
                 <span>Image Selection</span>
-                <input #imageInput
+                <input #newImage
                     type="file"
                     accept="image/*"
                     (change)="processFile(imageInput)">
             </label>
+           <hr>
+            <label class="form-control" for="postvisibility">Post Visibility:</label>
+                <select class="form-control" id="postvisibility">
+                    <option selected value="0">Public</option>
+                    <option value="1">Private</option>
+                </select>
         </div>
         <button class="btn btn-default" (click)="publishPost(newTitle, newLink)">Publish Post</button>
     </div>
